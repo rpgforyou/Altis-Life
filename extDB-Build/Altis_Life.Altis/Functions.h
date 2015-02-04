@@ -119,7 +119,6 @@ class Life_Client_Core
 		class vehicleAnimate {};
 		class weaponShopCfg {};
 		class vehicleWeightCfg {};
-		class houseConfig {};
 	};
 
 	class Player_Menu

@@ -31,13 +31,15 @@ SPY_Enable = true;
 #include "dialog\MasterHandler.h"
 #include "Config_Master.hpp"
 
-class RscTitles {
+class RscTitles
+{
 	#include "dialog\ui.hpp"
 	#include "dialog\progress.hpp"
 	#include "dialog\hud_nameTags.h"
 };
 
-class CfgFunctions {
+class CfgFunctions
+{
 	#include "Functions.h"
 };
 
