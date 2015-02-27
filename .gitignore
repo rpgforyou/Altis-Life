@@ -4,3 +4,6 @@
 *.zip
 *.bat
 *.exe
+*.iml
+.idea
+*.db
