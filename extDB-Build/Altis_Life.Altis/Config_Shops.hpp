@@ -68,7 +68,7 @@ class WeaponShops {
         level = -1;
         msg = "";
         items[] = {
-            { "Binocular", "", 150 },
+        	{ "Binocular", "", 150 },
 			{ "ItemGPS", "", 100 },
 			{ "ToolKit", "", 250 },
 			{ "FirstAidKit", "", 150 },
@@ -87,7 +87,7 @@ class WeaponShops {
         level = -1;
         msg = "";
         items[] = {
-            { "arifle_sdar_F", "Taser Rifle", 20000 },
+        	{ "arifle_sdar_F", "Taser Rifle", 20000 },
 			{ "hgun_P07_snds_F", "Stun Pistol", 2000 },
 			{ "hgun_P07_F", "", 7500 },
 			{ "HandGrenade_Stone", "Flashbang", 1700 },
@@ -109,7 +109,7 @@ class WeaponShops {
         level = 2;
         msg = "You must be a Patrol Officer Rank!";
         items[] = {
-            { "arifle_MX_F", "", 35000 },
+        	{ "arifle_MX_F", "", 35000 },
 			{ "SMG_02_ACO_F", "", 30000 },
 			{ "HandGrenade_Stone", "Flashbang", 1700 },
 			{ "MineDetector", "", 1000 },
