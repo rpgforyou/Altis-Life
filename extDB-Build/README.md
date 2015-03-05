@@ -3,10 +3,11 @@ This build is for extDB https://github.com/Torndeco/extdb
 To setup extDB you need to use the Windows pre-compiled build and edit the extdb-conf.ini Database 2 field with your Database name and login SQL user details to match pretty much your Arma2MySQL one.
 Make sure the following files are in the root directory of your ARMA 3 server files (where the exe is):
 
-extdb-conf.ini
-sqlite.db
-tbb.dll
-tbbmalloc.dll
+../@extDB/extDB/
+../@extDB/extDB.dll
+../@extDB/extdb-conf.ini
+../tbb.dll
+../tbbmalloc.dll
 
 You can drag the extdb.dll to that folder as well or you can copy over @extdb over as a regular mod. If you choose to use @extdb as a regular mod your commandline will be:
 -mod=@life_server;@extdb
@@ -19,11 +20,11 @@ Requirements:
 
 Working Linux Arma3Server
 
-Debian/Ubuntu
+Debian 8/Ubuntu 14.04+
 
-apt-get install libttb2:i386
+apt-get install libtbb2:i386
 
-RedHat/CentOS
+RedHat/CentOS 7
 
 yum install tbb.i686
 
