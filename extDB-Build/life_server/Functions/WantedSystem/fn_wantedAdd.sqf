@@ -4,7 +4,7 @@
 	Database Persistence By: ColinM
 	Assistance by: Paronity
 	Stress Tests by: Midgetgrimm
-	
+
 	Description:
 	Adds or appends a unit to the wanted list.
 */
@@ -37,7 +37,7 @@ switch(_type) do
 	case "666": {_type = ["666",2000]};
 	case "667": {_type = ["667",45000]};
 	case "668": {_type = ["668",15000]};
-	
+
 	case "1": {_type = ["1",350]};
     case "2": {_type = ["2",1500]};
     case "3": {_type = ["3",2500]};
@@ -53,22 +53,20 @@ if(count _type == 0) exitWith {}; //Not our information being passed...
 if(_customBounty != -1) then {_type set[1,_customBounty];};
 //Search the wanted list to make sure they are not on it.
 
-_result = format["SELECT wantedID, wantedCrimes FROM wanted WHERE wantedID='%1'",_uid];
+_result = format["wantedGetCrimes:%1",_uid];
 waitUntil{!DB_Async_Active};
 _queryResult = [_result,2] call DB_fnc_asyncCall;
 
-_name = [_name] call DB_fnc_mresString;
 _val = [(_type select 1)] call DB_fnc_numberSafe;
 
 if(count _queryResult != 0) then
 {
-	_pastCrimes = [(_queryResult select 1)] call DB_fnc_mresToArray;
+	_pastCrimes = _queryResult select 1;
 	_pastCrimes pushBack (_type select 0);
-	_pastCrimes = [_pastCrimes] call DB_fnc_mresArray;
-	_query = format["UPDATE wanted SET wantedCrimes = '%1', wantedBounty = wantedBounty + '%2', active = '1' WHERE wantedID='%3'",_pastCrimes,_val,_uid];
+	_query = format["wantedUpdateCrimes:%1:%2:%3",_pastCrimes,_val,_uid];
 } else {
-	_crimes = [[(_type select 0)]] call DB_fnc_mresArray;
-	_query = format["INSERT INTO wanted (wantedID, wantedName, wantedCrimes, wantedBounty, active) VALUES('%1','%2','%3','%4', '1')",_uid,_name,_crimes,_val];
+	_crimes = [(_type select 0)];
+	_query = format["wantedInsertCrimes:%1:%2:%3:%4:1",_uid,_name,_crimes,_val];
 };
 
 if(!isNil "_query") then {
