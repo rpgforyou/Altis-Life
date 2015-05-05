@@ -40,6 +40,9 @@ if(!isNull _source) then {
 			
 			//Temp fix for super tasers on cops.
 			if(playerSide == west && side _source == west) then {
+			
+				//For when cops should heal each other uncomment
+				//_damage = false;
 				_damage = _currdamage;
 			};
 		};
